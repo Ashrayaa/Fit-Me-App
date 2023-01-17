@@ -2,7 +2,7 @@
   "name": "fitme",
   "version": "1.0.0",
   "description": "Fit Me app with attractive UI",
-  "main": "App.js",
+  "main": "/src/index.html",
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html",
