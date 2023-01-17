@@ -1,4 +1,5 @@
 import React from "react";
+import Star from "/assets/images/green star.png";
 
 const restaurantlist = [
   {
@@ -1781,23 +1782,55 @@ const RestaurantCard = ({
   avgRating,
 }) => {
   return (
-    <div className="p-6 ml-24 flex flex-col flex-wrap border  shadow-lg rounded-xl">
+    <div className="p-6 ml-24 flex flex-col flex-wrap bg-[#F8F8F8] rounded-lg">
       <img
-        className="w-72 rounded-xl"
+        className="rounded-lg"
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
           cloudinaryImageId
         }
       />
-      <div className="flex flex-col gap-4 overflow-x-auto overflow-y-hidden ">
-        <h2 className="text-lg font-medium mt-4">{name}</h2>
-        <h4 className="flex flex-wrap text-sm font-light">{cuisines.join(" , ")}</h4>
-        <div className="flex gap-6 justify-start items-center align-middle">
-          <h4 className="text-sm font-light">{lastMileTravelString}</h4>
-          <h4 className="text-sm font-light">{area}</h4>
-          <h4 className="text-sm font-light text-white bg-green-600 p-1 w-8 rounded-lg ">
-            {avgRating}
-          </h4>
+      <div className="flex flex-col items-start gap-4 overflow-x-auto overflow-y-hidden ">
+        <h2 className="text-lg text-[#202020] font-medium mt-4">{name}</h2>
+
+        <h4 className="flex flex-wrap text-[#808080] text-sm font-light">
+          {cuisines.join(" , ")}
+        </h4>
+
+        <div
+          className="flex text-[#202020] font-medium gap-12
+         items-center "
+        >
+          <div className="flex gap-1 items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 h-6 text-[#FC8019]"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+              />
+            </svg>
+            <h4 className="text-sm">{area}</h4>
+          </div>
+
+          <div className="flex gap-1 items-center">
+            <img src={Star} className="w-4" />
+            <h4 className="text-sm ">{avgRating}</h4>
+          </div>
+        </div>
+        <div className="flex gap-2 items-center">
+          <h4 className="text-sm font-medium">{lastMileTravelString}</h4>
         </div>
       </div>
     </div>

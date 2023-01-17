@@ -2,7 +2,6 @@
   "name": "fitme",
   "version": "1.0.0",
   "description": "Fit Me app with attractive UI",
-
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html",
