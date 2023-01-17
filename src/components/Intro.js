@@ -1,5 +1,5 @@
 import React from "react";
-import Frame from "/assets/images/Frame 2.svg";
+import Frame from "/assets/images/Frame 2.png";
 import Banana from "/assets/images/banana.svg";
 import Apple from "/assets/images/apple.png";
 import Union from "/assets/images/Union.png";
@@ -7,7 +7,7 @@ import Union from "/assets/images/Union.png";
 export const Intro = () => {
   return (
     <div className="flex gap-8">
-      <div className="mt-44 w-32">
+      <div className="mt-44 w-[500px]">
         <img src={Union} id="union" key="frame2" />
       </div>
       <div className="flex flex-col gap-4  mt-10">
@@ -30,11 +30,11 @@ export const Intro = () => {
           <span className="text-[#FC8019]"> & Daily Life</span>
         </h1>
 
-          <p className="break-words w-[700px] mt-4 text-sm font-light">
-            Your one-stop destination for delicious delivery meals. Elevate your
-            daily meals with premium quality, healthy food options, designed to
-            nourish your body and satisfy your taste buds.
-          </p>
+        <p className="break-words w-[700px] mt-4 text-sm font-light">
+          Your one-stop destination for delicious delivery meals. Elevate your
+          daily meals with premium quality, healthy food options, designed to
+          nourish your body and satisfy your taste buds.
+        </p>
 
         <div className="flex flex-col gap-4">
           <h3 className="text-[#404040] text-sm font-normal">
