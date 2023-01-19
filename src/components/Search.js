@@ -1,11 +1,11 @@
 import React from "react";
-import Vector from "/assets/images/Vector.png"
+import Vector from "/assets/images/Vector.png";
 
 export const Search = () => {
   return (
-    <div className="flex justify-center items-center gap-8 bg-[#FC8019] py-10">
+    <div className="flex flex-col gap-4 lg:flex-row lg:px-6 justify-center items-center lg:gap-8 bg-[#FC8019] py-10">
       <h1 className="text-white font-medium text-lg">Search by Restaurant</h1>
-      <img src={Vector} className="w-4"/>
+      <img src={Vector} className="w-4 hidden lg:block" />
       {/* <div className="flex gap-4">
         <input
           type="text"
@@ -25,8 +25,8 @@ export const Search = () => {
         >
           Search
         </label>
-        <div class="relative">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <div class="relative flex flex-col gap-4">
+          <div class="hidden absolute inset-y-0 left-0 lg:flex items-center pl-3 pointer-events-none">
             <svg
               aria-hidden="true"
               class="w-5 h-5 text-gray-500 dark:text-gray-400"
@@ -44,15 +44,15 @@ export const Search = () => {
             </svg>
           </div>
           <input
-            type="search"
+            type="text"
             id="search"
-            class="block w-[700px] p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none bg-gray-50"
-            placeholder="Enter the restaurant you're looking for..."
+            class="block w-[340px] md:w-[500px] lg:w-[700px] p-4 pl-4 lg:pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none bg-gray-50"
+            placeholder="Enter search text here.."
             required
           />
           <button
             type="submit"
-            class="text-white absolute right-2.5 bottom-2.5 bg-black   font-medium rounded-lg text-sm px-4 py-2"
+            class="text-white  absolute right-2.5 bottom-2.5 bg-black   font-medium rounded-lg text-sm px-4 py-2"
           >
             Search
           </button>

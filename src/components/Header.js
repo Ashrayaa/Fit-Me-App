@@ -8,7 +8,7 @@ const Title = () => (
       <img
         id="title"
         key="foodvilla"
-        className="w-24 ml-36"
+        className="w-24 lg:ml-36"
         alt="Logo"
         src={Logo}
       />
@@ -18,12 +18,12 @@ const Title = () => (
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center py-10">
+    <div className="flex px-6 mt-10 gap-20 justify-between items-center lg:py-10">
       {/* {title} */}
       <Title />
       {/* {Title()} */}
       <div>
-        <ul className="flex justify-between items-center gap-12 mr-20">
+        <ul className="flex gap-4 lg:justify-between lg:items-center lg:gap-12 lg:mr-20">
           <li><img src={Bag} className="w-8"/></li>
           <li><button className="bg-black text-white py-2 px-5 rounded-lg">Sign In</button></li>
          
