@@ -24,7 +24,7 @@ const RestaurantCard = ({
         </h4>
 
         <div
-          className="flex text-[#202020] font-medium gap-20
+          className="flex text-[#202020] font-medium gap-16
          items-center "
         >
           <div className="flex gap-1 items-center">

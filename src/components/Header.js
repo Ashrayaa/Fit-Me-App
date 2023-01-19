@@ -18,7 +18,7 @@ const Title = () => (
 
 const Header = () => {
   return (
-    <div className="flex px-6 mt-10 gap-20 justify-between items-center lg:py-10">
+    <div className="flex px-6 mt-10 lg:mt-4 lg:px-2 gap-20 justify-between items-center lg:py-10">
       {/* {title} */}
       <Title />
       {/* {Title()} */}
