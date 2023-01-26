@@ -104,51 +104,111 @@ const RestaurantMenu = () => {
       {/* search bar */}
       {/* favourite */}
 
-      {/* menu list */}
-      <div className="flex flex-col gap-4">
-        {restaurant?.menu?.items &&
-          Object.values(restaurant?.menu?.items).map((item, index) => (
-            <div className="px-12 py-10">
-              <div className="flex flex-col">
-                <h6
-                  className="font-medium text-lg hover:text-[#FC8019]"
-                  id={item.category}
-                >
-                  {item.category}
-                </h6>
-              </div>
-              <div className="grid grid-flow-row gap-4 lg:grid-cols-2">
-                <div className="flex flex-col gap-4">
-                  <h4 className="text-[#202020] font-medium text-lg">{item?.name}</h4>
-                  <h4 className="text-[#808080] text-sm font-medium">₹{item?.price}</h4>
-                  <h5 className="text-[#808080] text-xs font-light">{item?.description}</h5>
-
-                </div>
-                <div className="flex flex-col items-center ">
-                  <img
-                    className="w-52 rounded-lg"
-                    src={
-                      "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
-                      item.cloudinaryImageId
-                    }
-                  />
-                  <button className="text-[#1AC84B] w-24 -mt-5 font-medium bg-white px-6 py-2 border rounded-lg shadow-lg border-white z-10">
-                    ADD
-                  </button>
-                </div>
-              </div>
-              <div className="bg-[#808080] mt-12 h-0.5 border-2 border-solid"></div>
-            </div>
-            // (
-            //   <div>
-            //     <li key={item.id}>{item.name}</li>
-            //     <li>{item.description}</li>
-            //   </div>
-            // ),
-            // (<li></li>)
+      <div className="grid grid-flow-row grid-cols-4 p-12">
+        <div className="hidden lg:flex flex-col gap-4 mr-4">
+          {Object.values(restaurant?.menu?.items).map((item) => (
+            <h6
+              className="font-medium text-sm hover:text-[#FC8019] text-right"
+              id={item.category}
+            >
+              {item.category}
+            </h6>
           ))}
+        </div>
+        <div className="bg-[#808080] w-0.5 border-2 border-solid"></div>
+
+        {/* menu list */}
+        <div className="-ml-72">
+          {restaurant?.menu?.items &&
+            Object.values(restaurant?.menu?.items).map((item, index) => (
+              <div className="">
+                {/* <div className="flex flex-col">
+                  <h6
+                    className="font-medium text-lg hover:text-[#FC8019]"
+                    id={item.category}
+                  >
+                    {item.category}
+                  </h6>
+                </div> */}
+                <div className="grid grid-flow-row grid-cols-2 xl:gap-48">
+                  <div className="flex flex-col gap-2">
+                    <h4 className="text-[#202020] font-medium text-sm">
+                      {item?.name}
+                    </h4>
+                    <h4 className="text-[#000000] text-sm font-medium">
+                      ₹{item?.price}
+                    </h4>
+                    <h5 className="text-[#808080] text-xs font-light mt-4 w-[500px]">
+                      {item?.description}
+                    </h5>
+                  </div>
+
+                  <div className="flex flex-col items-center ">
+                    <img
+                      className="w-32 rounded-lg"
+                      src={
+                        "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
+                        item.cloudinaryImageId
+                      }
+                    />
+                    <button className="text-[#1AC84B] w-24 -mt-5 font-medium bg-white px-6 py-2 border rounded-lg shadow-lg border-white z-10">
+                      ADD
+                    </button>
+                  </div>
+                </div>
+
+                <div className="bg-[#808080] mt-8 mb-12 h-0.5 border-2 border-solid"></div>
+              </div>
+              // (
+              //   <div>
+              //     <li key={item.id}>{item.name}</li>
+              //     <li>{item.description}</li>
+              //   </div>
+              // ),
+              // (<li></li>)
+            ))}
+        </div>
+        <div className="flex flex-col gap-6 ml-14">
+          <div className="flex justify-between">
+            <h3 className="font-medium text-lg">Cart</h3>
+            <h5>2 items</h5>
+          </div>
+          <h4 className="text-sm font-normal">
+            from <span className="text-[#FC8019]">Lunch Box</span>
+          </h4>
+          <div className="flex justify-between">
+            <div className="flex flex-col text-xs font-light">
+              <h4>Brunch for 2 - Veg</h4>
+              <h4 className="text-[#808080]">₹599</h4>
+            </div>
+            <h5> - 1 + </h5>
+          </div>
+          <h4 className="text-sm font-normal">
+            from <span className="text-[#FC8019]">Fasso</span>
+          </h4>
+          <div className="flex justify-between">
+            <div className="flex flex-col text-xs font-light">
+              <h4>Paneer Rice</h4>
+              <h4 className="text-[#808080]">₹200</h4>
+            </div>
+            <h5> - 1 + </h5>
+          </div>
+
+          <div className="flex justify-between">
+            <div className="flex flex-col">
+              <h4 className="text-lg font-medium">Subtotal</h4>
+              <h4 className="text-[#808080] font-light text-xs">
+                Extra charges may apply
+              </h4>
+            </div>
+            <h5> ₹799 </h5>
+          </div>
+
+          <button className="text-white bg-[#FC8019] font-medium text-lg py-2 rounded-lg">
+            Checkout
+          </button>
+        </div>
       </div>
-     
     </div>
   );
 };
