@@ -1,9 +1,9 @@
 import React from "react";
 import FooterLogo from "/assets/images/footerlogo.png";
 import Facebook from "/assets/images/facebook icon.png";
-import Instagram from "/assets/images/insta.png"
-import Twitter from "/assets/images/twitter icon.png"
-
+import Instagram from "/assets/images/insta.png";
+import Twitter from "/assets/images/twitter icon.png";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -13,7 +13,9 @@ export const Footer = () => {
         <img src={FooterLogo} alt="Footer Logo" className="w-24" />
         {/* Links */}
         <ul className="text-white flex gap-6 lg:gap-12 font-normal text-xs">
-          <li className="cursor-pointer ">About Us</li>
+          <Link to="/about">
+            <li className="cursor-pointer ">About Us</li>
+          </Link>
           <li className="cursor-pointer ">Delivery</li>
           <li className="cursor-pointer ">Help & Support</li>
           <li className="cursor-pointer ">T & C</li>

@@ -1,6 +1,10 @@
 import React from "react";
-import Logo from "/assets/images/Logo (1).png"
-import Bag from "/assets/images/Bag.png"
+import Logo from "/assets/images/Logo (1).png";
+import Bag from "/assets/images/Bag.png";
+import { useState } from "react";
+const loggedInUser = () => {
+  return false;
+};
 
 const Title = () => (
   <>
@@ -17,6 +21,7 @@ const Title = () => (
 );
 
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   return (
     <div className="flex px-6 mt-10 lg:mt-4 lg:px-2 gap-20 justify-between items-center lg:py-10">
       {/* {title} */}
@@ -24,9 +29,23 @@ const Header = () => {
       {/* {Title()} */}
       <div>
         <ul className="flex gap-4 lg:justify-between lg:items-center lg:gap-12 lg:mr-20">
-          <li><img src={Bag} className="w-8"/></li>
-          <li><button className="bg-black text-white py-2 px-5 rounded-lg">Sign In</button></li>
-         
+          <li>
+            <img src={Bag} className="w-8" />
+          </li>
+          {isLoggedIn ? (
+            <li>
+            <button onClick={()=>setIsLoggedIn(false)} className="bg-black text-white py-2 px-5 rounded-lg">
+              Logout
+            </button>
+          </li>
+            
+          ) : (
+            <li>
+              <button onClick={()=> setIsLoggedIn(true)} className="bg-black text-white py-2 px-5 rounded-lg">
+                Log In
+              </button>
+            </li>
+          )}
         </ul>
       </div>
     </div>

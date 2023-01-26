@@ -14,10 +14,6 @@ export const Intro = () => {
         <h1 className=" lg:text-5xl text-3xl font-medium ">
           Premium <span className="text-[#FC8019]">Quality</span>
         </h1>
-        {/* <h1 className="flex">
-          Food for your <img src={Banana} className="w-28" />{" "}
-          <span className="text-[#FC8019]"> healthy </span>
-        </h1> */}
 
         <h1 className="lg:flex items-center gap-3 lg:text-5xl text-3xl font-medium">
           Food for your
