@@ -53,7 +53,7 @@ const Search = () => {
           className="text-white  absolute right-2.5 bottom-2.5 bg-black   font-medium rounded-lg text-sm px-4 py-2"
           onClick={() => {
             const data = filterData(searchText, allRestaurants);
-            setFilteredRestaurants(data);
+            setAllRestaurants(data);
           }}
         >
           Search

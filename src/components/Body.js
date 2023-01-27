@@ -8,12 +8,12 @@ import { Link } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Search from "./Search";
 
-function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase)
-  );
-  return filterData;
-}
+// function filterData(searchText, restaurants) {
+//   const filterData = restaurants.filter((restaurant) =>
+//     restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase)
+//   );
+//   return filterData;
+// }
 
 const Body = () => {
   // const [errorMessage, setErrorMessage] = useState("");

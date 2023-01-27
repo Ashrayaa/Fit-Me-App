@@ -2,8 +2,8 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div className="flex flex-col gap-16 ml-[35%] p-10 border border-neutral-100 w-[500px] py-12 shadow-xl rounded-lg justify-center items-center align-middle mb-10">
-      <div className="grid grid-cols-2 gap-20 items-center grid-flow-row">
+    <div className="flex flex-col gap-16 ml-[35%] p-10 border border-neutral-100 w-[500px] py-12 shadow-xl rounded-lg justify-center items-center align-middle">
+      <div className="grid grid-cols-2 gap-24 items-center grid-flow-row">
         <div className="flex flex-col gap-3">
           <h1 className="text-4xl font-medium">Login</h1>
           <h5 className="text-sm font-medium">
