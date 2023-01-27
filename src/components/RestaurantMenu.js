@@ -50,10 +50,10 @@ const RestaurantMenu = () => {
           <h4>{restaurant?.cuisines?.join(" , ")}</h4>
 
           <div className="flex gap-2">
-            <h4>{restaurant?.locality}</h4>
-            <h4>,</h4>
-            <h4>{restaurant?.city}</h4>
-            <h4>,</h4>
+            {/* <h4>{restaurant?.locality}</h4>
+            <h4>,</h4> */}
+            {/* <h4>{restaurant?.city}</h4>
+            <h4>,</h4> */}
             <h4>{restaurant?.area}</h4>
           </div>
 
