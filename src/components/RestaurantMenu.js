@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { IMG_CDN_URL } from "../config";
-import Shimmer from "./Shimmer";
+import { DetailPageShimmer } from "./Shimmer";
 import Offertag from "/assets/images/offertag.png";
 import Star from "/assets/images/green star.png";
 
@@ -29,7 +29,7 @@ const RestaurantMenu = () => {
   // }
   // let uniqueCategories = [...new Set(restaurant?.category)];
   return !restaurant ? (
-    <Shimmer />
+    <DetailPageShimmer/>
   ) : (
     <div>
       {/* <h1>{resId}</h1> */}
