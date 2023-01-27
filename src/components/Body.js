@@ -3,7 +3,7 @@ import React from "react";
 import RestaurantCard from "./RestaurantCard";
 // import Vector from "/assets/images/Vector.png";
 import { useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
+// import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Search from "./Search";
