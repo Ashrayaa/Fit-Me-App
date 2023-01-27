@@ -11,6 +11,7 @@ import About from "./components/About";
 // import Help from "./components/Help";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Login from "./components/Login";
 
 const AppLayout = () => {
   return (
@@ -37,10 +38,10 @@ const appRouter = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
-      // {
-      //   path: "/delivery",
-      //   element: <Delivery />,
-      // },
+       {
+         path: "/Login",
+         element: <Login />,
+       },
       // {
       //   path: "/help",
       //   element: <Help />,

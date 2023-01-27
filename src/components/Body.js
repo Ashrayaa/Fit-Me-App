@@ -43,13 +43,7 @@ const Body = () => {
             loop
             className="w-[500px] h-[500px]"
             src="https://assets8.lottiefiles.com/packages/lf20_lillfalp.json"
-            // style={{ height: "300px", width: "300px" }}
-          >
-            {/* <Controls
-            visible={true}
-            buttons={["play", "repeat", "frame", "debug"]}
-          /> */}
-          </Player>
+          ></Player>
           <h1 className="text-xl font-semibold text-black">
             Hey there, Doors are closed
           </h1>
@@ -62,7 +56,26 @@ const Body = () => {
     );
 
   if (filteredRestaurants?.length === 0)
-    return <h1>No Restaurants matches your filter!</h1>;
+    return (
+      <>
+        <Search />
+        <div className="flex flex-col gap-4 justify-center items-center">
+          <Player
+            autoplay
+            loop
+            className="w-[500px] h-[500px]"
+            src="https://assets2.lottiefiles.com/packages/lf20_jbt4j3ea.json"
+          ></Player>
+          <h1 className="text-xl font-semibold text-black">
+            No results found!
+          </h1>
+          <h4 className="text-base font-normal text-[#808080] w-[500px] text-center">
+            Unfortunately, it seems your search for this restaurant didn't yield
+            any results.
+          </h4>
+        </div>{" "}
+      </>
+    );
 
   return allRestaurants?.length === 0 ? (
     <Shimmer />

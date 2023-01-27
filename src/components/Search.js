@@ -8,6 +8,7 @@ function filterData(searchText, restaurants) {
     );
     return filterData;
   }
+  
 const Search = () => {
     const [allRestaurants, setAllRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);

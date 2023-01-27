@@ -2,6 +2,9 @@ import React from "react";
 import Logo from "/assets/images/Logo (1).png";
 import Bag from "/assets/images/Bag.png";
 import { useState } from "react";
+import Login from "./Login";
+import { Link } from "react-router-dom";
+
 const loggedInUser = () => {
   return false;
 };
@@ -21,7 +24,11 @@ const Title = () => (
 );
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [showsideBar, setShowSideBar] = useState(false);
+  // function handleclick() {
+  //   setShowSideBar(true);
+  // }
   return (
     <div className="flex px-6 mt-10 lg:mt-4 lg:px-2 gap-20 justify-between items-center lg:py-10">
       {/* {title} */}
@@ -32,16 +39,35 @@ const Header = () => {
           <li>
             <img src={Bag} className="w-8" />
           </li>
+          <Link to="./login">
+            <button className="bg-black text-white py-2 px-5 rounded-lg">
+              Signup
+            </button>
+          </Link>
+          {/* <button
+            onClick={{
+              handleclick,
+            }}
+            className="bg-black text-white py-2 px-5 rounded-lg"
+          >
+            Signup
+          </button>
+          {showsideBar && <Login />} */}
           {isLoggedIn ? (
             <li>
-            <button onClick={()=>setIsLoggedIn(false)} className="bg-black text-white py-2 px-5 rounded-lg">
-              Logout
-            </button>
-          </li>
-            
+              <button
+                onClick={() => setIsLoggedIn(false)}
+                className="bg-black text-white py-2 px-5 rounded-lg"
+              >
+                Logout
+              </button>
+            </li>
           ) : (
             <li>
-              <button onClick={()=> setIsLoggedIn(true)} className="bg-black text-white py-2 px-5 rounded-lg">
+              <button
+                onClick={() => setIsLoggedIn(true)}
+                className="bg-black text-white py-2 px-5 rounded-lg"
+              >
                 Log In
               </button>
             </li>
