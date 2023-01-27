@@ -78,7 +78,7 @@ const RestaurantMenu = () => {
 
             <div className="flex flex-col gap-2">
               <h4 className="text-sm font-medium">
-                {restaurant.costForTwoMsg}
+                {restaurant?.costForTwoMsg}
               </h4>
               <h4 className="text-xs font-light">Cost for two</h4>
             </div>
@@ -106,12 +106,13 @@ const RestaurantMenu = () => {
 
       <div className="grid grid-flow-row grid-cols-4 p-12 px-24">
         <div className="hidden lg:flex flex-col gap-4 mr-6">
-          {Object.values(restaurant?.menu?.items).map((item,index) => (
+          {restaurant?.menu?.widgets.map((item, index) => (
             <h6
               className="font-medium text-sm hover:text-[#FC8019] text-right"
-              id={item.category}
+              id={item.name}
+              key={index}
             >
-              {item.category}
+              <a href={"#" + item.name}> {item.name}</a>
             </h6>
           ))}
         </div>
@@ -124,21 +125,31 @@ const RestaurantMenu = () => {
           {restaurant?.menu?.items &&
             Object.values(restaurant?.menu?.items).map((item, index) => (
               <div className="">
-                {/* <div className="flex flex-col">
-                  <h6
-                    className="font-medium text-lg hover:text-[#FC8019]"
+
+                  {/* <h6
+                    className="font-medium text-lg"
                     id={item.category}
+                    key={index}
                   >
                     {item.category}
-                  </h6>
-                </div> */}
+                  </h6> */}
+   
                 <div className="grid grid-flow-row grid-cols-2 xl:gap-48">
                   <div className="flex flex-col gap-2">
+                    <div className="w-4">
+                      {item?.attributes?.vegClassifier === "VEG" ? (
+                        <img src="https://iamgoingvegan.b-cdn.net/wp-content/uploads/2020/05/Indian-Vegetarian-Mark-1-1024x1024.jpg" />
+                      ) : item?.attributes?.vegClassifier === "NONVEG" ? (
+                        <img src="https://w7.pngwing.com/pngs/815/552/png-transparent-lentil-soup-veggie-burger-vegetarianism-vegetarian-and-non-vegetarian-marks-non-veg-food-miscellaneous-angle-food-thumbnail.png" />
+                      ) : (
+                        " "
+                      )}
+                    </div>
                     <h4 className="text-[#202020] font-medium text-sm">
                       {item?.name}
                     </h4>
                     <h4 className="text-[#000000] text-sm font-medium">
-                      ₹{item?.price}
+                      ₹{item?.price / 100}
                     </h4>
                     <h5 className="text-[#808080] text-sm font-light mt-4 w-[430px]">
                       {item?.description}
@@ -147,10 +158,13 @@ const RestaurantMenu = () => {
 
                   <div className="flex flex-col items-center ">
                     <img
+                      alt="#"
                       className="w-32 rounded-lg"
                       src={
-                        "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
-                        item.cloudinaryImageId
+                        !item?.cloudinaryImageId
+                          ? "https://cdn3d.iconscout.com/3d/premium/thumb/food-and-drink-5727926-4800418.png"
+                          : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
+                            item.cloudinaryImageId
                       }
                     />
                     <button className="text-[#1AC84B] w-24 -mt-5 font-medium bg-white px-6 py-2 border rounded-lg shadow-lg border-white z-10">
