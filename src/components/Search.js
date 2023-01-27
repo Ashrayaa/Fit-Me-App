@@ -1,19 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Vector from "/assets/images/Vector.png";
 import React from "react";
 
 function filterData(searchText, restaurants) {
-    const filterData = restaurants.filter((restaurant) =>
-      restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase)
-    );
-    return filterData;
-  }
-  
+  const filterData = restaurants.filter((restaurant) =>
+    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase)
+  );
+  return filterData;
+}
+
 const Search = () => {
-    const [allRestaurants, setAllRestaurants] = useState([]);
-    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-    const [searchText, setSearchText] = useState("");
-  
+  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    getRestaurants();
+  }, []);
+
+  async function getRestaurants() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+  }
+
   return (
     <div className="flex flex-col gap-4 lg:flex-row lg:px-6 justify-center items-center lg:gap-8 bg-[#FC8019] py-10">
       <h1 className="text-white font-medium text-lg">Search by Restaurant</h1>
