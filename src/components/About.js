@@ -9,14 +9,14 @@ const About = () => {
         <h1 className="font-bold text-transparent text-4xl bg-clip-text bg-[#FC8019]">
           About Us
         </h1>
-        <div className="flex gap-1 justify-center items-center px-32">
+        <div className="lg:flex-row flex flex-col gap-6 lg:gap-1 justify-center items-center lg:px-32 ">
           <Player
             autoplay
             loop
-            className="w-[500px]"
+            className="lg:w-[500px]"
             src="https://assets6.lottiefiles.com/packages/lf20_ihkjwhbc.json"
           ></Player>
-          <p className=" font-normal text-xs lg:font-light lg:text-sm text-slate-700">
+          <p className=" leading-6 tracking-normal lg:text-left font-normal p-4 text-sm lg:font-light text-slate-700">
             Introducing FitMe, your go-to destination for delicious food
             delivery. Our app, built with ReactJS, offers a seamless experience
             for ordering from local restaurants straight to your door. Our team
@@ -31,8 +31,8 @@ const About = () => {
             restaurants to ensure the best experience for our users.
           </p>
         </div>
-        <div className="flex gap-1 justify-center items-center px-32">
-          <p className=" font-normal text-xs lg:font-light lg:text-sm text-slate-700">
+        <div className="lg:flex-row flex flex-col-reverse gap-6 lg:gap-1 justify-center items-center lg:px-32 ">
+          <p className=" leading-6 tracking-normal lg:text-left font-normal text-sm p-4 lg:font-light text-slate-700">
             Trust us to deliver your next meal, whether you're at home, at work,
             or on-the-go. Join us on our journey to revolutionize the food
             delivery experience. Download FitMe now and enjoy the convenience of
@@ -52,7 +52,7 @@ const About = () => {
           <Player
             autoplay
             loop
-            className="w-[500px]"
+            className="lg:w-[500px]"
             src="https://assets6.lottiefiles.com/packages/lf20_on5CEa.json"
           ></Player>
         </div>

@@ -41,7 +41,7 @@ const Header = () => {
               Signup
             </button>
           </Link>
-          {isLoggedIn ? (
+          {/* {isLoggedIn ? (
             <li>
               <button
                 onClick={() => setIsLoggedIn(false)}
@@ -59,7 +59,7 @@ const Header = () => {
                 Log In
               </button>
             </li>
-          )}
+          )} */}
         </ul>
       </div>
     </div>
