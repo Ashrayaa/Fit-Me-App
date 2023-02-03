@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
 import { IMG_CDN_URL } from "../config";
 import { DetailPageShimmer } from "./Shimmer";
 import Offertag from "/assets/images/offertag.png";
@@ -21,18 +20,13 @@ const RestaurantMenu = () => {
         resId
     );
     const json = await data.json();
-    console.log(json.data);
     setRestaurant(json.data);
   }
-  // if(!restaurant){
-  //   return <Shimmer/>;
-  // }
-  // let uniqueCategories = [...new Set(restaurant?.category)];
+ 
   return !restaurant ? (
     <DetailPageShimmer/>
   ) : (
     <div>
-      {/* <h1>{resId}</h1> */}
       {/* black screen */}
       <div className="flex flex-col justify-center gap-6 lg:flex-row bg-black text-white p-12 lg:justify-around">
         {/* image */}

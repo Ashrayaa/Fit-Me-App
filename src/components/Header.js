@@ -25,10 +25,7 @@ const Title = () => (
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [showsideBar, setShowSideBar] = useState(false);
-  // function handleclick() {
-  //   setShowSideBar(true);
-  // }
+  
   return (
     <div className="flex px-6 mt-10 lg:mt-4 lg:px-2 gap-20 justify-between items-center lg:py-10">
       {/* {title} */}
@@ -44,15 +41,6 @@ const Header = () => {
               Signup
             </button>
           </Link>
-          {/* <button
-            onClick={{
-              handleclick,
-            }}
-            className="bg-black text-white py-2 px-5 rounded-lg"
-          >
-            Signup
-          </button>
-          {showsideBar && <Login />} */}
           {isLoggedIn ? (
             <li>
               <button

@@ -3,7 +3,7 @@ import React from "react";
 import RestaurantCard from "./RestaurantCard";
 // import Vector from "/assets/images/Vector.png";
 import { useState, useEffect } from "react";
-// import Shimmer from "./Shimmer";
+import Shimmer, { MainShimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Search from "./Search";
@@ -55,30 +55,30 @@ const Body = () => {
       </>
     );
 
-  if (filteredRestaurants?.length === 0)
-    return (
-      <>
-        <Search />
-        <div className="flex flex-col gap-4 justify-center items-center">
-          <Player
-            autoplay
-            loop
-            className="w-[500px] h-[500px]"
-            src="https://assets2.lottiefiles.com/packages/lf20_jbt4j3ea.json"
-          ></Player>
-          <h1 className="text-xl font-semibold text-black">
-            No results found!
-          </h1>
-          <h4 className="text-base font-normal text-[#808080] w-[500px] text-center">
-            Unfortunately, it seems your search for this restaurant didn't yield
-            any results.
-          </h4>
-        </div>{" "}
-      </>
-    );
+  // if (filteredRestaurants?.length === 0)
+  //   return (
+  //     <>
+  //       <Search />
+  //       <div className="flex flex-col gap-4 justify-center items-center">
+  //         <Player
+  //           autoplay
+  //           loop
+  //           className="w-[500px] h-[500px]"
+  //           src="https://assets2.lottiefiles.com/packages/lf20_jbt4j3ea.json"
+  //         ></Player>
+  //         <h1 className="text-xl font-semibold text-black">
+  //           No results found!
+  //         </h1>
+  //         <h4 className="text-base font-normal text-[#808080] w-[500px] text-center">
+  //           Unfortunately, it seems your search for this restaurant didn't yield
+  //           any results.
+  //         </h4>
+  //       </div>{" "}
+  //     </>
+  //   );
 
-  return allRestaurants?.length === 0 ? (
-    <Shimmer />
+  return !filteredRestaurants ? (
+    ((<Search />), (<MainShimmer />))
   ) : (
     <>
       <Search />
