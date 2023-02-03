@@ -5,11 +5,12 @@ import Vector from "/assets/images/Vector.png";
 import { useState, useEffect } from "react";
 import { MainShimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
+import { SWIGGY_API_URL } from "../config";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase)
+    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
   );
   return filterData;
 }
@@ -26,9 +27,7 @@ const Body = () => {
 
   async function getRestaurants() {
     try {
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&page_type=DESKTOP_WEB_LISTING"
-      );
+      const data = await fetch(SWIGGY_API_URL);
       const json = await data.json();
       setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
       setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
