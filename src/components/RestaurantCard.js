@@ -13,7 +13,7 @@ const RestaurantCard = ({
   avgRating,
 }) => {
   return (
-    <div className="p-6 ml-24 flex flex-col sm:grid sm:grid-flow-row sm:grid-cols-2 md:grid-cols-3 bg-[#F8F8F8] rounded-lg">
+    <div className="p-6 ml-24 flex flex-col bg-[#F8F8F8] rounded-lg">
       <img className="rounded-lg" src={IMG_CDN_URL + cloudinaryImageId} />
       <div className="flex flex-col items-start gap-4 overflow-x-auto overflow-y-hidden ">
         <h2 className="text-lg text-[#202020] font-medium mt-4">{name}</h2>
