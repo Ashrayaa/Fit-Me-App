@@ -23,7 +23,7 @@ const RestaurantCard = ({
         </h4>
 
         <div
-          className="flex text-[#202020] font-medium gap-10
+          className="flex text-[#202020] font-medium gap-4
          items-center "
         >
           <div className="flex gap-1 items-center">
@@ -49,11 +49,13 @@ const RestaurantCard = ({
             <h4 className="text-sm">{area}</h4>
           </div>
 
-          <div className="flex gap-1 items-center">
+          <div className="flex gap-1 items-start">
             <img src={Star} className="w-4" />
             <h4 className="text-sm ">{avgRating}</h4>
           </div>
         </div>
+
+        
         <div className="flex gap-1 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
