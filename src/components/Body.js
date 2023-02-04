@@ -133,9 +133,9 @@ const Body = () => {
         </div>
       )}
 
-      {allRestaurants?.length == 0 ? (
+      {/* {allRestaurants?.length == 0 ? (
         <MainShimmer />
-      ) : (
+      ) : ( */}
 
         <div className="grid grid-cols-1 gap-4 -ml-16 mr-8 sm:grid-cols-2 grid-flow-row xl:grid-cols-3 lg:gap-y-8 lg:mr-12 lg:px-16">
           {filteredRestaurants?.map((restaurant) => {
@@ -149,7 +149,7 @@ const Body = () => {
             );
           })}
         </div>
-      )}
+      {/* )} */}
     </>
   );
 };
