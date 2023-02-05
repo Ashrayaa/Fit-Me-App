@@ -11,7 +11,7 @@ export const MainShimmer = () => {
               .map((e, index) => (
                 <div class="p-6 md:w-1/3">
                   <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                    <div class="lg:h-48 h-32 bg-gray-400 md:h-36 w-full object-cover object-center"></div>
+                    <div class="lg:h-48 h-32 animate-pulse bg-gray-400 md:h-36 w-full object-cover object-center"></div>
                     <div class="p-6">
                       <h2 class="bg-gray-400 animate-pulse h-4 w-1/4 mb-2"></h2>
                       <h1 class="w-1/2 mb-4 h-6 animate-pulse bg-gray-500"></h1>
