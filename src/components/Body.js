@@ -122,13 +122,13 @@ const Body = () => {
           <Player
             autoplay
             loop
-            className="w-[500px] h-[500px]"
+            className="lg:w-[500px] lg:h-[500px]"
             src="https://assets2.lottiefiles.com/packages/lf20_jbt4j3ea.json"
           ></Player>
           <h1 className="text-xl font-semibold text-black">{errorMessage}</h1>
-          <h4 className="text-base font-normal text-[#808080] w-[500px] text-center">
+          <h4 className="text-base font-normal text-[#808080] lg:w-[500px] text-center">
             Unfortunately, it seems your search for this restaurant didn't yield
-            any results.
+            any results
           </h4>
         </div>
       )}
