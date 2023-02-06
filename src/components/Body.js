@@ -53,21 +53,21 @@ const Body = () => {
   if (!allRestaurants)
     return (
       <>
-        <div className="flex flex-col gap-4 justify-center items-center">
+        <div className="flex flex-col gap-4 justify-center items-center p-3">
           <Player
             autoplay
             loop
-            className="w-[500px] h-[500px]"
+            className="lg:w-[500px] lg:h-[500px]"
             src="https://assets8.lottiefiles.com/packages/lf20_lillfalp.json"
           ></Player>
           <h1 className="text-xl font-semibold text-black">
             Hey there, Doors are closed
           </h1>
-          <h4 className="text-base font-normal text-[#808080] w-[500px] text-center">
+          <h4 className="text-base font-normal text-[#808080] lg:w-[500px] text-center">
             Our restaurants are currently so popular, they're booked up faster
             than a clown car at a circus!
           </h4>
-        </div>{" "}
+        </div>
       </>
     );
 
@@ -118,7 +118,7 @@ const Body = () => {
         </div>
       </div>
       {errorMessage && (
-        <div className="flex flex-col gap-4 justify-center items-center">
+        <div className="flex flex-col gap-4 justify-center items-center p-2">
           <Player
             autoplay
             loop
