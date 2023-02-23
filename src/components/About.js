@@ -56,6 +56,8 @@ const About = () => {
             src="https://assets6.lottiefiles.com/packages/lf20_on5CEa.json"
           ></Player>
         </div>
+        <a href="/profile"><button className="bg-[#FC8019] text-white font-medium py-3 px-5 rounded-lg">Go to Developer's Profile</button></a>
+
       </div>
     </div>
   );
