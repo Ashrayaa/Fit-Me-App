@@ -36,9 +36,9 @@ const Header = () => {
           <li>
             <img src={Bag} className="w-8" />
           </li>
-          <Link to="./login">
+          <Link to="/login">
             <button className="bg-black text-white py-2 px-5 rounded-lg">
-              Signup
+              LOGIN
             </button>
           </Link>
           {/* {isLoggedIn ? (

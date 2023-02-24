@@ -4,24 +4,12 @@ import { IMG_CDN_URL } from "../config";
 import { DetailPageShimmer } from "./Shimmer";
 import Offertag from "/assets/images/offertag.png";
 import Star from "/assets/images/green star.png";
+import useRestaurant from "../utils/useRestaurant";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
-  const [restaurant, setRestaurant] = useState(null);
-
-  useEffect(() => {
-    getRestaurantInfo();
-  }, []);
-
-  async function getRestaurantInfo() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/v4/full?lat=8.5241391&lng=76.9366376&menuId=" +
-        resId
-    );
-    const json = await data.json();
-    setRestaurant(json.data);
-  }
+  const restaurant = useRestaurant(resId);
 
   return !restaurant ? (
     <DetailPageShimmer />

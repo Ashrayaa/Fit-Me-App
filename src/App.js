@@ -12,6 +12,7 @@ import About from "./components/About";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Login from "./components/Login";
+import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 
 const AppLayout = () => {
@@ -46,8 +47,12 @@ const appRouter = createBrowserRouter([
         // ],
       },
       {
-        path: "/Login",
+        path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup/>,
       },
 
       {

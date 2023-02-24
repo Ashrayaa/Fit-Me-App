@@ -1,5 +1,4 @@
 import React from "react";
-// import { restaurantlist } from "../config";
 import RestaurantCard from "./RestaurantCard";
 import Vector from "/assets/images/Vector.png";
 import { useState, useEffect } from "react";
@@ -8,12 +7,7 @@ import { Link } from "react-router-dom";
 import { SWIGGY_API_URL } from "../config";
 import { Player } from "@lottiefiles/react-lottie-player";
 
-function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-  );
-  return filterData;
-}
+import { filterData } from "../utils/helper";
 
 const Body = () => {
   const [errorMessage, setErrorMessage] = useState("");

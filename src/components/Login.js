@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -7,7 +8,8 @@ const Login = () => {
         <div className="flex flex-col justify-center items-center gap-3">
           <h1 className="text-5xl font-medium">Login</h1>
           <h5 className="text-sm font-medium">
-            or <span className="text-[#FC8019]">create an account</span>
+            or <span className="text-[#FC8019] cursor-pointer">
+              <Link to="/signup">create an account</Link></span>
           </h5>
         </div>
         <img
@@ -17,14 +19,28 @@ const Login = () => {
       </div>
 
       <div className="flex flex-col gap-4 lg:w-96">
+      <input
+          className="border p-4 border-gray-100 shadow-sm rounded-md outline-none"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+        />
         <input
+          className="border p-4 border-gray-100 shadow-sm rounded-md outline-none"
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+        />
+        {/* <input
           className="border p-4 border-gray-100 shadow-sm rounded-md outline-none"
           placeholder="Phone Number"
           //type="tel"
           //name="mobile"
           //id="mobile"
           //value
-        />
+        /> */}
         <button className="bg-[#FC8019] p-4 text-white font-medium text-xl rounded-md">
           LOGIN
         </button>

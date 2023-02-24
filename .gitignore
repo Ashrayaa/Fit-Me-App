@@ -7,8 +7,8 @@
 node_modules/
 dist/
 
-# Compiled Java class files
-*.class
+# Compiled Java className files
+*.className
 
 # Compiled Python bytecode
 *.py[cod]
