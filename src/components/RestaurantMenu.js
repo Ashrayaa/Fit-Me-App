@@ -7,10 +7,13 @@ import Star from "/assets/images/green star.png";
 import useRestaurant from "../utils/useRestaurant";
 
 const RestaurantMenu = () => {
+ 
   const { resId } = useParams();
 
   const restaurant = useRestaurant(resId);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return !restaurant ? (
     <DetailPageShimmer />
   ) : (

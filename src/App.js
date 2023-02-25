@@ -1,19 +1,21 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
-import { createRoot } from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import { Footer } from "./components/Footer";
 import { Intro } from "./components/Intro";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import About from "./components/About";
 // import Delivery from "./components/Delivery";
 // import Help from "./components/Help";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import Profile from "./components/Profile";
+import { FaqShimmer } from "./components/Shimmer";
+
+const FAQ = lazy(() => import("./components/Faq"));
+const About = lazy(() => import("./components/About"));
+const Profile = lazy(() => import("./components/Profile"));
 
 const AppLayout = () => {
   return (
@@ -47,12 +49,20 @@ const appRouter = createBrowserRouter([
         // ],
       },
       {
+        path: "/faq",
+        element: (
+          <Suspense fallback={<FaqShimmer/>}>
+            <FAQ />
+          </Suspense>
+        ),
+      },
+      {
         path: "/login",
         element: <Login />,
       },
       {
         path: "/signup",
-        element: <Signup/>,
+        element: <Signup />,
       },
 
       {
@@ -60,9 +70,9 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />,
       },
       {
-        path:"/profile",
-        element:<Profile/>
-      }
+        path: "/profile",
+        element: <Profile />,
+      },
     ],
   },
 ]);

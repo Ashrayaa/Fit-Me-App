@@ -143,3 +143,17 @@ export const DetailPageShimmer = () => {
     </>
   );
 };
+
+export const FaqShimmer = () => {
+  return(
+    <div className="m-6">
+      <h1 className="text-black text-3xl">FAQs</h1>
+      {Array(4).fill("").map((e,index)=>(
+        <div className="flex flex-col m-4 gap-3 bg-slate-200 h-32 p-4 rounded-lg">
+          <div className="bg-gray-300 w-[30%] h-9 rounded-md"></div>
+          <div className="bg-gray-300 w-[50%] h-9 rounded-md"></div>
+        </div>
+      ))}
+    </div>
+  )
+};

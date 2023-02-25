@@ -108,7 +108,7 @@ const Signup = () => {
         /> */}
 
           <button className="bg-[#FC8019] p-4 text-white font-medium text-xl rounded-md">
-          <Link to="/login"></Link>  Sign Up
+            <Link to="/login">Sign Up</Link>
           </button>
         </form>
 

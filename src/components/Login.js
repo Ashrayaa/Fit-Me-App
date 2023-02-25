@@ -77,8 +77,9 @@ const Login = () => {
           //id="mobile"
           //value
         /> */}
+
         <button className="bg-[#FC8019] p-4 text-white font-medium text-xl rounded-md">
-         <Link to="/"></Link> LOGIN
+          <Link to="/"> LOGIN </Link>
         </button>
         <p className="font-normal text-[#808080] text-xs text-center">
           By clicking on Login, I accept the Terms & Conditions & Privacy Policy
