@@ -40,7 +40,11 @@ const appRouter = createBrowserRouter([
 
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense>
+            <About />
+          </Suspense>
+        ),
         // children: [
         //   {
         //     path: "profile",
@@ -51,7 +55,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/faq",
         element: (
-          <Suspense fallback={<FaqShimmer/>}>
+          <Suspense fallback={<FaqShimmer />}>
             <FAQ />
           </Suspense>
         ),
@@ -71,7 +75,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: (
+          <Suspense>
+            <Profile />
+          </Suspense>
+        ),
       },
     ],
   },
